@@ -25,9 +25,8 @@ public:
 		TreeNode* temp = root->right;
 		root->right = root->left;
 		root->left = temp;
-		// delete will free the point memory so must set it is NULL
-		temp = NULL;
-		delete temp;
+		// delete will free the point memory new and delete must pair
+		// so just a point do not free
 		return root;
 	}
 };
