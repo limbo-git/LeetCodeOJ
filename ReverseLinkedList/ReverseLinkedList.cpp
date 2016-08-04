@@ -65,6 +65,23 @@ public:
 		}
 		return head;
 	}
+
+	// two points
+	ListNode* reverseList(ListNode* head)
+	{
+		if (!head) return head;
+		if (!head->next) return head;
+		ListNode* perv = NULL;
+		ListNode* iter = head;
+		while(iter)
+		{
+			ListNode* temp = iter;
+			iter = iter->next;
+			temp->next = perv;
+			perv = temp;
+		}
+		return perv;
+	}
 };
 
 
